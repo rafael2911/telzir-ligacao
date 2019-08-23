@@ -24,7 +24,7 @@ public class CalculadoraDeLigacaoTest {
 		String origem = "011";
 		String destino = "017";
 		Integer duracao = 20;		
-		Plano plano = new Plano("FaleMais 30", 30);
+		Plano plano = new Plano(1L, "FaleMais 30", 30);
 		
 		assertEquals(BigDecimal.ZERO.setScale(2), calculadora.calcular(origem, destino, duracao, new LigacaoComPlano(plano )));
 		assertEquals(new BigDecimal("34.00"), calculadora.calcular(origem, destino, duracao, new LigacaoSemPlano()));
@@ -37,7 +37,7 @@ public class CalculadoraDeLigacaoTest {
 		String origem = "011";
 		String destino = "017";
 		Integer duracao = 40;
-		Plano plano = new Plano("FaleMais 30", 30);
+		Plano plano = new Plano(1L, "FaleMais 30", 30);
 		
 		assertEquals(new BigDecimal("18.70"), calculadora.calcular(origem, destino, duracao, new LigacaoComPlano(plano)));
 		assertEquals(new BigDecimal("68.00"), calculadora.calcular(origem, destino, duracao, new LigacaoSemPlano()));

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+</head>
+<body>
+	
+	<h1 th:fragment="header">
+		Calculadora de preço por ligação
+	</h1>
+	
+	<div th:fragment="content" class="input-form">
+		<form id="clienteForm" th:action="@{/calculadora/(form)}" th:object="${consultaForm}"
+			action="#" method="post">
+			
+			<div class="row">
+			
+				<div class="col-sm-3 form-group">
+					<label class="control-label" for="origem">Origem</label>
+					<input type="text" class="form-control form-control-sm" th:field="*{origem}">
+					<div th:if="${#fields.hasErrors('origem')}" th:errors="*{origem}" class="label alert-danger"></div>
+				</div>
+				<div class="col-sm-3 form-group">
+					<label class="control-label" for="destino">Destino</label>
+					<input type="text" class="form-control form-control-sm" th:field="*{destino}">
+					<div th:if="${#fields.hasErrors('destino')}" th:errors="*{destino}" class="label alert-danger"></div>
+				</div>
+				<div class="col-sm-3 form-group">
+					<label class="control-label" for="tempo">Tempo</label>
+					<input type="text" class="form-control form-control-sm" th:field="*{tempo}">
+					<div th:if="${#fields.hasErrors('tempo')}" th:errors="*{tempo}" class="label alert-danger"></div>
+				</div>
+				<div class="col-sm-3 form-group">
+				<label>Plano</label>
+					<select name="plano" th:field="*{plano}" class="form-control form-control-sm">
+						<option value=""></option>
+						<option th:each="plano : ${planos}" th:value="${plano.id}" th:text="${plano.descricao}"></option>
+					</select>
+					<div th:if="${#fields.hasErrors('plano')}" th:errors="*{plano}" class="label alert-danger"></div>
+				</div>
+				
+			</div>
+			
+			<input type="submit" value="Consultar" class="btn btn-primary btn-sm">
+
+		</form>
+	</div>
+
+</html>
