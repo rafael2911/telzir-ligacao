@@ -10,8 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import br.com.crcarvalho.telzir.model.LigacaoComPlano;
-import br.com.crcarvalho.telzir.model.Plano;
 import br.com.crcarvalho.telzir.model.LigacaoSemPlano;
+import br.com.crcarvalho.telzir.model.entity.Plano;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

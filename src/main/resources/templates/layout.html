@@ -11,37 +11,17 @@
 <body>
 	<div>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		  <a class="navbar-brand" href="#" th:href="@{/}">Incidentes</a>
+		  <a class="navbar-brand" href="#" th:href="@{/}">Telzir Ligações</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 		
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
-		      <li class="nav-item dropdown">
-		        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Cadastros
-		        </a>
-		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		          <a class="dropdown-item" href="#" th:href="@{/usuario}">Usuários</a>
-		          <a class="dropdown-item" href="#" th:href="@{/chamado}">Chamados</a>
-		        </div>
-		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href='<c:url value="/tarefa/form" />'>Cadastro de Tarefas</a>
+		        <a class="nav-link" th:href="@{/calculadora}" href="#">Calculadora</a>
 		      </li>
 		    </ul>
-		    <ul class="navbar-nav mr-rigth">
-		    	<li class="nav-item dropdown dropleft">
-			        <a th:text="${'nome sobrenome'}" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          
-			        </a>
-			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			          <a class="dropdown-item" href='<c:url value="/usuario/alteraSenha" />'>Alterar Senha</a>
-			          <a class="dropdown-item" th:href="@{/logout}" href='#'>Sair</a>
-			        </div>
-			      </li>
-			</ul>
 		  </div>
 		</nav>
 		

@@ -2,6 +2,8 @@ package br.com.crcarvalho.telzir.model;
 
 import java.math.BigDecimal;
 
+import br.com.crcarvalho.telzir.model.entity.Plano;
+
 public class LigacaoComPlano implements Ligacao {
 	
 	private Plano plano;

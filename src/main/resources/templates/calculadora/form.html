@@ -10,7 +10,7 @@
 		Calculadora de preço por ligação
 	</h1>
 	
-	<div th:fragment="content" class="input-form">
+	<div th:fragment="content">
 		<form id="clienteForm" th:action="@{/calculadora/(form)}" th:object="${consultaForm}"
 			action="#" method="post">
 			
@@ -45,6 +45,32 @@
 			<input type="submit" value="Consultar" class="btn btn-primary btn-sm">
 
 		</form>
+		<br>
+		
+		<table class="table">
+			<thead>
+				<tr class="row">
+					<th class="col-2">Origem</th>
+					<th class="col-2">Destino</th>
+					<th class="col-2">Tempo</th>
+					<th class="col-2">Plano FaleMais</th>
+					<th class="col-2">Com FaleMais</th>
+					<th class="col-2">Sem FaleMais</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${resultado}" class="row">
+					<td class="col-2" th:text="${resultado.origem}">origem</td>
+					<td class="col-2" th:text="${resultado.destino}">destino</td>
+					<td class="col-2" th:text="${resultado.tempo}">tempo</td>
+					<td class="col-2" th:text="${resultado.plano}">plano</td>
+					<td class="col-2" th:text="'R$ ' + ${#numbers.formatDecimal(resultado.comPlano,3,2,'COMMA')}">comPlano</td>
+					<td class="col-2" th:text="'R$ ' + ${#numbers.formatDecimal(resultado.semPlano,3,2,'COMMA')}">semPlano</td>
+				</tr>
+			</tbody>
+		</table>
+
+		
 	</div>
 
 </html>

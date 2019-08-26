@@ -1,10 +1,21 @@
-package br.com.crcarvalho.telzir.model;
+package br.com.crcarvalho.telzir.model.entity;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+
+@Entity
 public class Tarifa {
+	
+	@EmbeddedId
 	private TarifaId identificador;
+	
+	@Column(nullable = false)
 	private BigDecimal valorPorMinuto;
+	
+	public Tarifa() {};
 
 	public Tarifa(String origem, String destino, BigDecimal valorPorMinuto) {
 		this.identificador = new TarifaId(origem, destino);
