@@ -64,8 +64,8 @@
 					<td class="col-2" th:text="${resultado.destino}">destino</td>
 					<td class="col-2" th:text="${resultado.tempo}">tempo</td>
 					<td class="col-2" th:text="${resultado.plano}">plano</td>
-					<td class="col-2" th:text="'R$ ' + ${#numbers.formatDecimal(resultado.comPlano,3,2,'COMMA')}">comPlano</td>
-					<td class="col-2" th:text="'R$ ' + ${#numbers.formatDecimal(resultado.semPlano,3,2,'COMMA')}">semPlano</td>
+					<td class="col-2" th:text="${#numbers.formatDecimal(resultado.comPlano,2,2,'COMMA')} ? 'R$ ' + ${#numbers.formatDecimal(resultado.comPlano,2,2,'COMMA')} : '-'">comPlano</td>
+					<td class="col-2" th:text="${#numbers.formatDecimal(resultado.semPlano,2,2,'COMMA')} ? 'R$ ' + ${#numbers.formatDecimal(resultado.semPlano,2,2,'COMMA')} : '-'">semPlano</td>
 				</tr>
 			</tbody>
 		</table>

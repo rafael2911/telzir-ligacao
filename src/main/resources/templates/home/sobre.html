@@ -11,11 +11,14 @@
 	</h1>
 	
 	<div th:fragment="content">
-		<div class="jumbotron jumbotron-fluid">
-		  <div class="container">
-		    <h1 class="display-4">Telzir</h1>
-		    <p class="lead">Empresa de telefonia especializada em chamadas de longa distância nacional.</p>
-		  </div>
+		<div class="jumbotron">
+			<h1 class="display-4">Telzir</h1>
+		  	<p class="lead">Empresa de telefonia especializada em chamadas de longa distância nacional.</p>
+		  	<hr class="my-4">
+		  	<p>
+				Calcule o valor da ligação com e sem o plano.
+		  		<a class="btn btn-primary btn-sm" th:href="@{/calculadora}" href="#" role="button">Calcular</a>
+		  	</p>
 		</div>
 	</div>
 
